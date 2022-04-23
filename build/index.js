@@ -172,36 +172,28 @@ function Questions(_ref) {
   // console.log(attr, "ab");
   // let {setAttributes, attributes} = attr;
   // let {page, quizes} = attributes;
-  let [quizedata, setQuizeData] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)([]); // let quizedata = [
-  // 	{
-  // 		"id": 6,
-  // 		"title": {
-  // 			"rendered": "second quiz"
-  // 		},
-  // 		"quizzes_meta": {
-  // 			"option_1": [
-  // 				"first option"
-  // 			],
-  // 			"option_2": [
-  // 				"second option"
-  // 			],
-  // 			"answer": [
-  // 				"option_1"
-  // 			]
-  // 		},
-  // 	},
-  // 	{
-  // 		"id": 5,
-  // 		"title": {
-  // 			"rendered": "First Quiz"
-  // 		},
-  // 		"quizzes_meta": {
-  // 			"option_1": "first option",
-  // 			"option_2": "second option",
-  // 			"answer": "option_2"
-  // 		}
-  // 	}
-  // ];
+  // let [quizedata, setQuizeData] = useState([])
+  let quizedata = [{
+    "id": 6,
+    "title": {
+      "rendered": "second quiz"
+    },
+    "quizzes_meta": {
+      "option_1": ["first option"],
+      "option_2": ["second option"],
+      "answer": ["option_1"]
+    }
+  }, {
+    "id": 5,
+    "title": {
+      "rendered": "First Quiz"
+    },
+    "quizzes_meta": {
+      "option_1": "first option",
+      "option_2": "second option",
+      "answer": "option_2"
+    }
+  }];
 
   const PageDisplay = () => {
     // console.log(quizes);
@@ -211,16 +203,14 @@ function Questions(_ref) {
       });
     });
   }; //
+  // setTimeout(function(){
+  // 	wp.apiFetch({path: "wp/v2/quizzes"}).then(fetchedQuizes => {
+  // 		setQuizeData(fetchedQuizes);
+  // 		console.log(quizedata)
+  // 	}).catch();
+  // },3000);
 
 
-  setTimeout(function () {
-    wp.apiFetch({
-      path: "wp/v2/quizzes"
-    }).then(fetchedQuizes => {
-      setQuizeData(fetchedQuizes);
-      console.log(quizedata);
-    }).catch();
-  }, 3000);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "Form"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
