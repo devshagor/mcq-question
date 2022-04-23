@@ -3,27 +3,27 @@ import { registerBlockType } from '@wordpress/blocks';
 const { __ } = wp.i18n;
 
 
-// let quizes = [];
-//
-// wp.apiFetch({path: "wp/v2/quizzes"}).then(fetchedQuizes => {
-// 	quizes = fetchedQuizes;
-// }).catch();
+let quizes = [];
 
-let quizes = [
-	{
-		"id": 6,
-		"title": {
-			"rendered": "second quiz"
-		},
+wp.apiFetch({path: "wp/v2/quizzes"}).then(fetchedQuizes => {
+	quizes = fetchedQuizes;
+}).catch();
 
-	},
-	{
-		"id": 5,
-		"title": {
-			"rendered": "First Quiz"
-		},
-	}
-]
+// let quizes = [
+// 	{
+// 		"id": 6,
+// 		"title": {
+// 			"rendered": "second quiz"
+// 		},
+
+// 	},
+// 	{
+// 		"id": 5,
+// 		"title": {
+// 			"rendered": "First Quiz"
+// 		},
+// 	}
+// ]
 
 import './style.scss';
 
@@ -65,7 +65,6 @@ registerBlockType('gutenberg-block/mcqapp', {
 	save,
 });
 
-const { registerBlockType }  = wp.blocks;
 
 import ServerSideRender from '@wordpress/server-side-render';
 import { useBlockProps } from '@wordpress/block-editor';
