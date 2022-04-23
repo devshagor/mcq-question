@@ -66,7 +66,9 @@ registerBlockType('gutenberg-block/mcqapp', {
 });
 
 const { registerBlockType }  = wp.blocks;
-const { Fragment } = wp.element;
+
+import ServerSideRender from '@wordpress/server-side-render';
+import { useBlockProps } from '@wordpress/block-editor';
 
 registerBlockType( 'gutenberg-block/mcqapp2', {
 		title: 'Quiz Two',
@@ -79,11 +81,15 @@ registerBlockType( 'gutenberg-block/mcqapp2', {
 			src: 'excerpt-view',
 		},  
 				
-		edit() {
-			return(
-				<Fragment>
-					<h2>Your Code</h2>
-				</Fragment>
+		edit: function (props) {
+			const blockProps = useBlockProps();
+			console.log(props.attributes);
+			return (
+				<div {...blockProps}>
+					<ServerSideRender
+						block="gutenberg-block/mcqapp2"
+					/>
+				</div>
 			);
 		},
 		save() {

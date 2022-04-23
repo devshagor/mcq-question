@@ -56,18 +56,33 @@ function dynamic_content_for_quiz() {
 		)
 	);
 
-    register_block_type( 'gutenberg-block/mcqapp', array(
-        'api_version' => 2,
-		"title" => "MCQ Block",
-        'editor_script' => 'load-editor-script',
-//        'render_callback' => 'render_template',
-		'attributes' => array(
-			'total_quizes' => array(
-				'type' => 'integer',
-				'default'	=> 0
-			),
-		)
-    ) );
+    register_block_type( 'gutenberg-block/mcqapp', 
+		array(
+			'api_version' => 2,
+			"title" => "MCQ Block",
+			'editor_script' => 'load-editor-script',
+	//        'render_callback' => 'render_template',
+			'attributes' => array(
+				'total_quizes' => array(
+					'type' => 'integer',
+					'default'	=> 0
+				),
+			)
+		) );
+
+    register_block_type( 'gutenberg-block/mcqapp2', 
+		array(
+			'api_version' => 2,
+			"title" => "Quiz Two",
+			'editor_script' => 'load-editor-script',
+	       'render_callback' => 'render_template',
+			'attributes' => array(
+				'total_quizes' => array(
+					'type' => 'integer',
+					'default'	=> 0
+				),
+			)
+		) );
 }
 add_action( 'init', 'dynamic_content_for_quiz' );
 
