@@ -37,12 +37,10 @@ import edit from './edit';
 
 registerBlockType('gutenberg-block/mcqapp', {
 
-	title: __( 'MCQ App', 'quiz' ),
+	title: __( 'MCQ App', ' mcq-question' ),
 	icon: 'list-view',
 	keywords: [
-		__('WPC Food List', 'quiz'),
-		__( 'WP Cafe' , 'quiz'),
-		__( 'Food Tab' , 'quiz'),
+		__('Block ', ''),
 	],
 	attributes:{
 		page: {
@@ -66,3 +64,32 @@ registerBlockType('gutenberg-block/mcqapp', {
 	 */
 	save,
 });
+
+const { registerBlockType }  = wp.blocks;
+const { Fragment } = wp.element;
+
+registerBlockType( 'gutenberg-block/mcqapp2', {
+		title: 'Quiz Two',
+		description: 'About your Gutenberg Block',      
+		category: 'none',
+		
+		icon: {
+			background: '#0073aa',
+			foreground: '#ffffff',
+			src: 'excerpt-view',
+		},  
+				
+		edit() {
+			return(
+				<Fragment>
+					<h2>Your Code</h2>
+				</Fragment>
+			);
+		},
+		save() {
+			return(
+				<h4>Your Code</h4>
+			);
+		},
+    }
+);
